@@ -2,9 +2,9 @@ package gr.ntua.eestec.eestec_android_workshop;
 
 public class FlickrPhotoset {
 
-	private final long mId;
-	private final String mTitle;
-	private final String mDescription;
+	private long mId;
+	private String mTitle;
+	private String mDescription;
 
 	public FlickrPhotoset(long id, String title, String description) {
 
