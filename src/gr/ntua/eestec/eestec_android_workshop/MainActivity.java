@@ -17,7 +17,7 @@ public class MainActivity extends Activity {
 
 		ArrayList<FlickrPhotoset> list = new ArrayList<FlickrPhotoset>();
 
-		for (int i = 0; i < 20; ++i) {
+		for (int i = 0; i < 100000; ++i) {
 
 			list.add(new FlickrPhotoset(i, "Hello, " + i));
 		}

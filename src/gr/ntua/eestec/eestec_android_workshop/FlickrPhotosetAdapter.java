@@ -39,6 +39,22 @@ public class FlickrPhotosetAdapter extends BaseAdapter {
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
 
+		// Replace code with this one to improve speed
+		// TextView tv;
+		// if (convertView == null) {
+		//
+		// LayoutInflater infalter = (LayoutInflater) mContext
+		// .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+		// tv = (TextView) infalter.inflate(R.layout.row_view, parent, false);
+		//
+		// } else {
+		//
+		// tv = (TextView) convertView;
+		// }
+		// tv.setText(mPhotosets.get(position).getTitle());
+		//
+		// return tv;
+
 		LayoutInflater infalter = (LayoutInflater) mContext
 				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		TextView tv = (TextView) infalter.inflate(R.layout.row_view, parent,
