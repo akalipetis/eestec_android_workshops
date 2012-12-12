@@ -9,6 +9,7 @@ import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpPost;
+import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -41,16 +42,22 @@ public class NetworkHelper {
 
 		if (jObj == null)
 			return null;
+		
+		Log.d("ANTONIS", "Passed initial");
 
 		jObj = jObj.optJSONObject("photosets");
 
 		if (jObj == null)
 			return null;
+		
+		Log.d("ANTONIS", "Passed photosets");
 
 		JSONArray jArray = jObj.optJSONArray("photoset");
 
 		if (jArray == null)
 			return null;
+		
+		Log.d("ANTONIS", "Passed");
 
 		ArrayList<FlickrPhotoset> photosets = new ArrayList<FlickrPhotoset>();
 
@@ -60,7 +67,7 @@ public class NetworkHelper {
 
 			if (jObj == null)
 				break;
-
+			
 			String title = jObj.optJSONObject("title").optString("_content");
 			String description = jObj.optJSONObject("description").optString(
 					"_content");
@@ -80,8 +87,7 @@ public class NetworkHelper {
 
 		try {
 
-			AndroidHttpClient client = AndroidHttpClient
-					.newInstance("eestec_android");
+			DefaultHttpClient client = new DefaultHttpClient();
 
 			post.setEntity(new UrlEncodedFormEntity(data));
 			response = client.execute(post);

@@ -21,6 +21,16 @@ public class FlickrPhotosetAdapter extends BaseAdapter {
 		mContext = context;
 	}
 
+	public void setPhotosets(ArrayList<FlickrPhotoset> photosets) {
+
+		mPhotosets = photosets;
+		
+		if (mPhotosets == null)
+			notifyDataSetInvalidated();
+		else
+			notifyDataSetChanged();
+	}
+
 	@Override
 	public int getCount() {
 		return mPhotosets.size();
